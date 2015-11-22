@@ -1,4 +1,4 @@
-#!/bin/bash -x -e
+#!/bin/bash -xe
 
 git config --global user.email "roberto@vasquez-angel.de"
 git config --global user.name "Roberto Vasquez Angel"
@@ -19,7 +19,7 @@ rvm --default use 2.2.3
 
 # Install a better prompt
 git clone https://github.com/nojhan/liquidprompt.git
-echo "[[ $- = *i* ]] source ~/liquidprompt/liquidprompt" > ~/.bashrc
+echo '[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt' >> ~/.bashrc
 
   
 

@@ -1,4 +1,4 @@
-#!/bin/bash -x -e
+#!/bin/bash -xe
 
 # Install curl
 apt-get install -y curl
@@ -10,7 +10,7 @@ apt-get install -y git
 apt-get install -y tig
 
 # Install german language pack
-apt-get install -y language-pack-de
+# apt-get install -y language-pack-de
 
 # Install sublime 3
 apt-add-repository -y ppa:webupd8team/sublime-text-3
