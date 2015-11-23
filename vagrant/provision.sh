@@ -38,3 +38,9 @@ apt-get install -y libgmp-dev
 
 # Install Paperclip prerequisites
 apt-get install -y imagemagick
+
+# Switch keyboard layout to german
+echo -e 'XKeMODEL="pc105"' > /etc/default/keyboard
+echo -e 'XKBLAYOUT="de"' >> /etc/default/keyboard
+echo -e 'XKBVARIANT="nodeadkeys"' >> /etc/default/keyboard
+echo -e 'XKBOPTIONS="terminate:ctrl_alt_bksp"' >> /etc/default/keyboard
