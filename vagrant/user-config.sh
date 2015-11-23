@@ -22,4 +22,24 @@ git clone https://github.com/nojhan/liquidprompt.git
 echo '[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt' >> ~/.bashrc
 
   
-
+# Install sublime package installer
+curl -sL https://sublime.wbond.net/Package%20Control.sublime-package > ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
+tee  ~/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings << OUT
+{
+    "installed_packages":
+    [
+        "BeautifyRuby",
+        "DocBlockr",
+        "Emmet",
+        "GitGutter",
+        "GitStatus",
+        "Package Control",
+        "RuboCop",
+        "SideBarEnhancements",
+        "SideBarFolders",
+        "SublimeLinter",
+        "SublimeLinter-rubocop",
+        "SublimeLinter-ruby"
+    ]
+}
+OUT
