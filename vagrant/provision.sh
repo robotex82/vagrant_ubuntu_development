@@ -29,3 +29,12 @@ usermod -aG docker vagrant
 # Install nodejs
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 apt-get install -y nodejs
+
+# Install ruby prerequisites
+apt-get install -y build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev autoconf libc6-dev ncurses-dev automake libtool
+
+# Install RedCloth prerequisites
+apt-get install -y libgmp-dev
+
+# Install Paperclip prerequisites
+apt-get install -y imagemagick
