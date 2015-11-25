@@ -3,8 +3,11 @@
 # Configure git
 git config --global user.email "roberto@vasquez-angel.de"
 git config --global user.name "Roberto Vasquez Angel"
+git config --global push.default simple
+git config --global credential.helper "cache --timeout=3600"
 
-tee ~/.gitconfig << OUT
+tee --append ~/.gitconfig << 'OUT'
+
 [alias]
     co = checkout
     ec = config --global -e
@@ -58,5 +61,37 @@ tee  ~/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings <<
         "SublimeLinter-rubocop",
         "SublimeLinter-ruby"
     ]
+}
+OUT
+
+# Add sublime settings
+tee ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings << 'OUT'
+{
+  "color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "hot_exit": false,
+  "remember_open_files": false
+}
+OUT
+
+# Add sublime keybindings
+tee ~/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap << 'OUT'
+[
+  { "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["ctrl+shift+7"], "command": "toggle_comment", "args": { "block": true } }
+]
+OUT
+
+
+# Add lazy clone command to bash
+tee --append ~/.bashrc << 'OUT'
+
+# Add lazy clone command to bash
+function gc {
+    url=$1;
+    reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
+    git clone $url $reponame;
+    cd $reponame;
 }
 OUT

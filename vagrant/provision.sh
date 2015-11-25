@@ -44,3 +44,9 @@ echo -e 'XKeMODEL="pc105"' > /etc/default/keyboard
 echo -e 'XKBLAYOUT="de"' >> /etc/default/keyboard
 echo -e 'XKBVARIANT="nodeadkeys"' >> /etc/default/keyboard
 echo -e 'XKBOPTIONS="terminate:ctrl_alt_bksp"' >> /etc/default/keyboard
+
+# Install heroku toolbelt
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+ 
+# Install postgres development libs
+sudo apt-get install -y libpq-dev
