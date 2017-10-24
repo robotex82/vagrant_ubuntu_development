@@ -28,14 +28,14 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 \curl -sSL https://get.rvm.io | bash
 source "$HOME/.rvm/scripts/rvm"
   
-# Install ruby 2.2.3
-rvm install 2.2.3
+# Install ruby 2.4.0
+rvm install 2.4.0
 
 # Install jruby 9.0.3.0
-rvm install 9.0.3.0
+# rvm install 9.0.3.0
 
 # Set ruby 2.2.3 as default
-rvm --default use 2.2.3
+rvm --default use 2.4.0
 
 # Install a better prompt
 git clone https://github.com/nojhan/liquidprompt.git
@@ -43,6 +43,8 @@ echo '[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt' >> ~/.bashrc
 
   
 # Install sublime package installer
+mkdir -p ~/.config/sublime-text-3/Installed\ Packages/
+mkdir -p ~/.config/sublime-text-3/Packages/User
 curl -sL https://sublime.wbond.net/Package%20Control.sublime-package > ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package
 tee  ~/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings << OUT
 {
